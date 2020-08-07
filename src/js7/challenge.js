@@ -8,10 +8,25 @@
  *
  * @param {array} colours - An array of colours e.g. ["red", "yellow"]
  * @return {array} A list of updated colours e.g. ["red", "red"]
- */
+//  */
+// const colours = ["violet", "green", "blue", "yellow", "red"];
+
+
 export const replaceColours = colours => {
-  // your code here
+ const preApprovedColours = ["red", "green", "blue"]
+  return colours.map ((colour) => { if (!preApprovedColour.includes(colour)) {
+  return "red";
+  } else {
+    return colour;
+  }
+});
 };
+
+  
+  //   return colours;
+  // } else {
+  //   const newArray = colours.slice(index, 1);
+  //   return newArray;
 
 /**
  * A function that takes a string and checks to see if it is a palindrome (noon, anna, madam are all palindromes)
@@ -21,7 +36,9 @@ export const replaceColours = colours => {
  * @returns {boolean} true if the word is a palindrome, false otherwise
  */
 export const palindromeChecker = word => {
-  // your code here
+  const aPalindrome = (word.split("").reverse().join("") ===word)
+  return (aPalindrome);
+  
 };
 
 /**
@@ -32,6 +49,13 @@ export const palindromeChecker = word => {
  * @param {array} words - the words to be checked
  * @returns {array} List of all the words that are palindromes
  */
+
+
+
 export const getAllPalindromes = words => {
-  // your code here
-};
+
+let realPalindromes = words.filter((word) => {
+  return(word.split("").reverse().join("") ===word);
+})
+  return(realPalindromes);
+}

@@ -15,17 +15,20 @@ export class Rectangle extends Shape {
    * @param {number} height
    * @param {number} width
    */
-  constructor(/* insert arguments here */) {
+  constructor(xCoord, yCoord, colour, height, width) {
     /**
      * The super takes the properties of the extended class
      * @param {number} xCoord
      * @param {number} yCoord
      * @param {string} colour
      */
-    super(/* insert arguments here */);
+    super(xCoord, yCoord, colour);
     /**
      * New properties go here
      */
+    this.height = height;
+    this.width= width;
+
   }
 
   /**
@@ -33,7 +36,7 @@ export class Rectangle extends Shape {
    * @returns {string} - This rectangle has been drawn at position (2, 5), has a height of 10 and a width of 15
    */
   drawShape() {
-    // your code here
+    return `This rectangle has been drawn at position (${this.xCoord}, ${this.yCoord}), has a height of ${this.height} and a width of ${this.width}`;
   }
 
   /**
@@ -42,6 +45,7 @@ export class Rectangle extends Shape {
    */
   calcArea() {
     // your code here
+    return (this.height*this.width);
   }
 
   /**
@@ -50,6 +54,7 @@ export class Rectangle extends Shape {
    */
   calcPerimeter() {
     // your code here
+    return ((this.height*2) + (this.width*2));
   }
 }
 
@@ -65,17 +70,18 @@ export class Circle extends Shape {
    * @param {string} colour
    * @param {number} radius
    */
-  constructor(/* insert arguments here */) {
+  constructor(xCoord, yCoord, colour, radius) {
     /**
      * The super takes the properties of the extended class
      * @param {number} xCoord
      * @param {number} yCoord
      * @param {string} colour
      */
-    super(/* insert arguments here */);
+    super(xCoord, yCoord, colour);
     /**
      * New properties go here
      */
+    this.radius = radius;
   }
 
   /**
@@ -83,7 +89,7 @@ export class Circle extends Shape {
    * @returns {string} - This circle has been drawn at position (4, 10) and has a radius of 3
    */
   drawShape() {
-    // your code here
+    return `This circle has been drawn at position (${this.xCoord}, ${this.yCoord}) and has a radius of ${this.radius}`;
   }
 
   /**
@@ -91,7 +97,7 @@ export class Circle extends Shape {
    * @returns {number}
    */
   get diameter() {
-    // your code here
+    return this.radius*2;
   }
 
   /**
@@ -100,13 +106,17 @@ export class Circle extends Shape {
    */
   calcArea() {
     // your code here
-  }
+  //   return Math.PI*(this.radius*this.radius);
+  // }
+  return (Math.PI*(Math.pow(this.radius, 2)))
 
   /**
    * Method that returns the circumference of the circle
    * @returns {number} to 2 decimal places
    */
-  calcCircumference() {
+  calcCircumference(); {
     // your code here
+
+return Number ((2*Math.PI*this.radius).toFixed(2));
   }
-}
+  }}

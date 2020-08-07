@@ -6,7 +6,9 @@
  * @return {string} Hi John, you are great!
  */
 export const greet = (firstName) => {
-  // your code here
+let firstName = "John";
+return `Hi ${firstName}, you are great!`;
+console.log (greet);
 };
 
 /**
@@ -16,7 +18,10 @@ export const greet = (firstName) => {
  * @return {string} The age difference between person 1 and person 2 is 10 years
  */
 export const calculateAgeDifference = (age1, age2) => {
-  // your code here
+let age1=24
+let age2=9
+const ageDifference = (age1 - age2);
+return `Person 1 is ${ageDifference} years older than Person 2}`
 };
 
 /**
@@ -26,5 +31,10 @@ export const calculateAgeDifference = (age1, age2) => {
  * @return {string} The total length of the names provided is 10 characters
  */
 export const totalNameLength = (firstName, lastName) => {
-  // your code here
+let total = (firstName.length + lastName.length);
+return (`The total length of the names provided is ${total} characters`);
 };
+
+
+
+

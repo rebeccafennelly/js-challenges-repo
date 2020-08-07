@@ -13,7 +13,7 @@ const person2Age = 33;
  * @return {string} Hello, my name is John Smith
  */
 export const greet = () => {
-  // your code here
+return "Hello, my name is John Smith";
 };
 
 /**
@@ -23,7 +23,7 @@ export const greet = () => {
  * @return {string} Mary is 11 years older than John
  */
 export const calculateAgeDifference = () => {
-  // your code here
+return person2FirstName + " is " + (person2Age - person1Age) + " years older than " + person1FirstName
 };
 
 /**
@@ -32,5 +32,6 @@ export const calculateAgeDifference = () => {
  * @return {string} The total length of both names is 20 characters
  */
 export const totalNameLength = () => {
-  // your code here
+
+return "The total length of both names is " + ((person1FirstName.length + person1LastName.length) + (person2FirstName.length + person2LastName.length)) + " characters"
 };

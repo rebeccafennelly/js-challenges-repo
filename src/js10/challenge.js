@@ -1,9 +1,10 @@
 /* Classes - In this challenge you will be adding methods and properties to classes in order to run tests */
 
 export class Shape {
-  constructor(xCoord, yCoord) {
+  constructor(xCoord, yCoord, colour) {
     this.xCoord = xCoord;
     this.yCoord = yCoord;
+    this.colour = colour;
   }
 
   /**
@@ -11,15 +12,16 @@ export class Shape {
    * @return {string} "(2, 5)"
    */
   get coordinates() {
-    // your code here
+    return `(${this.xCoord}, ${this.yCoord})`;   
   }
 
   /**
    * A method that returns a string
    * @return {string} "This shape has been drawn at position (2, 5)"
    */
-  drawShape() {
-    // your code here
+
+  drawShape() { 
+    return `This shape has been drawn at position ${this.coordinates}`
   }
 
   /**
@@ -28,8 +30,10 @@ export class Shape {
    * @param {number} yCoord
    */
   changePosition(xCoord, yCoord) {
-    // your code here
+    this.xCoord = xCoord;
+    this.yCoord = yCoord;
   }
+
 
   /**
    * Add a property of colour to the class and a method which updates the colour property
@@ -38,4 +42,9 @@ export class Shape {
    * @return {string} "The old colour was brown, the new colour is green"
    */
   // !!!!! THE NAME OF THE METHOD SHOULD BE changeColour !!!!!
+  changeColour(newColour) {
+    const string = `The old colour was ${this.colour}, the new colour is ${newColour}`;
+    this.colour = newColour;
+    return string;
+  }
 }

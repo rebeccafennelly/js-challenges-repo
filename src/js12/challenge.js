@@ -1,13 +1,24 @@
 // Asynchronous - This challenge will involve using promises to deal with asynchronous functions
 
+import data from "./data";
+
 /**
  * A function that uses the fetch API to read people from a static, local people file written in JSON format.
  * You nust fetch the people, convert it to json and return the people
  * @returns {array} the people array of objects
  */
 export const getData = () => {
-  // your code here
-};
+  return fetch("./data")
+  .then (response => {
+    return response.json();
+  })
+  .then (data => {
+    return data;
+  })
+  .catch(error => {
+    console.log(error);
+});
+}
 
 /**
  * A function that uses the fetch API to read people from a static, local people file written in JSON format.
@@ -15,8 +26,18 @@ export const getData = () => {
  * @return {array} ["Peter", "Joanna" etc.]
  */
 export const getNames = () => {
-  // your code here
-};
+  return fetch("./data")
+  .then (response => {
+    return response.json();
+  })
+  .then (data => {
+    return data.map ((person) => person.name);
+  })
+  .catch(error => {
+    console.log(error);
+});
+}
+  
 
 /**
  * A function that uses the fetch API to read people from a static, local people file written in JSON format.
@@ -25,8 +46,19 @@ export const getNames = () => {
  * @returns {object} person object
  */
 export const getPerson = (id) => {
+  return fetch("./data")
+  .then (response => {
+    return response.json();
+  })
+  .then (data => {
+    return data.filter ((person) => person.id === id)
+    return person;
+  })
+  .catch (error => {
+    console.log(error);
+});
+}
   // your code here
-};
 
 /**
  * A function that uses the fetch API to read people from a static, local people file written in JSON format.

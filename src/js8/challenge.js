@@ -1,4 +1,45 @@
-/* Objects - See the data.js file for the objects used in the tests */
+// /* Objects - See the data.js file for the objects used in the tests */
+// export const person1 = {
+//   id: "001",
+//   age: 20,
+//   isMarried: false,
+//   eyeColour: "brown",
+//   name: "Elizabeth Bennet",
+//   currentFortune: 150,
+//   incomePerAnnum: 50,
+//   address: "Longbourn, near Meryton, Hertfordshire",
+//   calculateFinancesYearEnd: function() {
+//     this.currentFortune += this.incomePerAnnum;
+//   }
+// };
+
+// export const person2 = {
+//   id: "002",
+//   age: 27,
+//   isMarried: false,
+//   eyeColour: "brown",
+//   name: "Fitzwilliam Darcy",
+//   currentFortune: 25000,
+//   incomePerAnnum: 10000,
+//   address: "Pemberley, near Lambton, Derbyshire",
+//   calculateFinancesYearEnd: function() {
+//     this.currentFortune += this.incomePerAnnum;
+//   }
+// };
+
+// export const person3 = {
+//   id: "003",
+//   age: 22,
+//   isMarried: false,
+//   eyeColour: "blue",
+//   name: "Jane Bennet",
+//   currentFortune: 150,
+//   incomePerAnnum: 50,
+//   address: "Pemberley, near Lambton, Derbyshire",
+//   calculateFinancesYearEnd: function() {
+//     this.currentFortune += this.incomePerAnnum;
+//   }
+// };
 
 /**
  * A function that takes in a person object and returns a summary of that person
@@ -7,7 +48,8 @@
  * @return {string} Elizabeth Bennet is 20 years old, has a fortune of £150, and lives in Longbourn, near Meryton, Hertfordshire
  */
 export const getSummary = (person) => {
-  // your code here
+const sentence = (`${person.name} is ${person.age} years old, has a fortune of £${person.currentFortune}, and lives in ${person.address}`);
+return sentence;
 };
 
 /**
@@ -16,9 +58,17 @@ export const getSummary = (person) => {
  * @param {object} person - A person object e.g. {name: "Elizabeth Bennet"}
  * @return {boolean} true if they are rich, false otherwise
  */
-export const isRich = (person) => {
-  // your code here
-};
+export const isRich = (person) => { 
+    if (person.incomePerAnnum > 1000) { 
+      return true;
+    } else {
+      return false;
+    } 
+
+    // BETTER WAY
+
+    // export const isRich = (person) => person.incomePerAnnum > 1000;
+    // }
 
 /**
  * A function that takes in two people objects and checks to see if their eye colours match
@@ -27,8 +77,7 @@ export const isRich = (person) => {
  * @param {object} person2 - A person object e.g. {name: "Elizabeth Bennet"}
  * @return {boolean} true if they match
  */
-export const matchingEyeColour = (person1, person2) => {
-  // your code here
+export const matchingEyeColour = (person1, person2) => person1.eyeColour === person2.eyeColour;
 };
 
 /**
@@ -38,5 +87,22 @@ export const matchingEyeColour = (person1, person2) => {
  * @return {object} the updated person
  */
 export const yearPassed = (person) => {
-  // your code here
+
+  // const people = ["person1", "person2", "person3"]
+  // const incrementedAge = people.map((person) => { 
+  person.age++;
+  person.calculateFinancesYearEnd();
+  return person;
+
 };
+
+// return yearsPassed();
+
+
+// // EJ's version
+// export const yearPassed = (person) => {
+// person.age += 1;
+// person.calculateFinancesYearEnd();
+// return person;
+// };
+
